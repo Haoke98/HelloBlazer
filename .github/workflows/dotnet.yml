@@ -16,17 +16,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Install Xcode 14.3
+      run: sudo xcode-select --switch /Applications/Xcode_14.3.app
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
         
-    - name: Install net7.0-android
-      run: dotnet workload install maui-android
-    - name: Install net7.0-ios
+    - name: Install .NET workloads
       run: |
-        dotnet workload install ios
         dotnet workload install maccatalyst
+        dotnet workload install ios
+        dotnet workload install maui-android
     
     - name: Restore dependencies
       run: dotnet restore
