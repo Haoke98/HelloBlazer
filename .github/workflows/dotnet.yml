@@ -20,6 +20,7 @@ jobs:
     - name: Install Xcode 14.3
       run: |
         xcode-select -p
+        gem install xcode-install
         xcode-install install 14.3
         xcode-select -p
     
