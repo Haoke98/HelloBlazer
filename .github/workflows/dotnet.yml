@@ -20,7 +20,10 @@ jobs:
     - name: Install Xcode 14.3
       run: |
         xcode-select -p
-        sudo xcode-select --switch /Applications/Xcode_14.3.app
+        sudo rm -rf /Library/Developer/CommandLineTools
+        xcode-select --install
+        sudo xcode-select --switch /Library/Developer/CommandLineTools
+        xcode-select -p
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
