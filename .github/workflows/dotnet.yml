@@ -21,10 +21,11 @@ jobs:
       with:
         dotnet-version: 7.0.x
         
-    - name: Install .NET workloads
-       run: dotnet workload install maui-android
-       run: dotnet workload install ios
-      
+    - name: Install net7.0-android
+      run: dotnet workload install maui-android
+    - name: Install net7.0-ios
+      run: dotnet workload install ios
+    
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
