@@ -21,6 +21,7 @@ jobs:
       run: |
         xcode-select -p
         gem install xcode-install
+        xcode-install --help
         export PATH=$PATH:/usr/local/bin
         xcode-install install 14.3
         xcode-select -p
